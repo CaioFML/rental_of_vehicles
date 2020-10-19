@@ -7,7 +7,7 @@ services:
     ports:
       - "3000:3000"
     volumes:
-      - .:/rentar_of_vehicles
+      - .:/rental_of_vehicles
       - bundle_path:/bundle
     environment:
       - BUNDLE_PATH=/bundle/vendor
