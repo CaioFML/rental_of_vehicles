@@ -14,6 +14,7 @@ gem "turbolinks", "~> 5"
 gem "webpacker", "~> 4.0"
 gem "devise"
 gem "httparty"
+gem "simple_form"
 
 group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
