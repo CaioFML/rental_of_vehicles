@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_10_20_033512) do
   create_table "vehicles", force: :cascade do |t|
     t.string "brand"
     t.string "plate"
-    t.string "model_name"
+    t.string "model"
     t.integer "model_year"
     t.integer "manufacture_year"
     t.datetime "created_at", precision: 6, null: false
