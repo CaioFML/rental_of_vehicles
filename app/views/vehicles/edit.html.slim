@@ -1,0 +1,11 @@
+= render "form"
+
+javascript:
+    document.addEventListener("turbolinks:load", function () {
+        $('#vehicle_brand_id option:selected').text($("#vehicle_brand").val())
+        $('#vehicle_model option:selected').text($("#vehicle_model_hidden").val())
+
+        $('#vehicle_model').on('change', function () {
+            $('#vehicle_model_hidden').val($("#vehicle_model option:selected").val())
+        })
+    })

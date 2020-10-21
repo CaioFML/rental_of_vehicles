@@ -1,0 +1,26 @@
+= link_to "Adicionar", new_vehicle_path, class: "btn btn-primary"
+
+h2 Veículos
+
+table.table.table-rover
+  thead
+    tr
+      td Marca
+      td Modelo
+      td Placa
+      td Ano do Modelo
+      td Ano de Fabricação
+      td
+  tbody
+    - @vehicles.each do |vehicle|
+      tr
+        td = vehicle.brand
+        td = vehicle.model
+        td = vehicle.plate
+        td = vehicle.model_year
+        td = vehicle.manufacture_year
+        td
+          => link_to "Editar", edit_vehicle_path(vehicle)
+          span> |
+          => link_to "Excluir", vehicle_path(vehicle),
+                method: :delete, data: { confirm: "Excluir veículo?" }
