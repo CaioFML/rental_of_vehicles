@@ -23,7 +23,7 @@ RSpec.describe VehiclesController, type: :request do
         brand: "test_brand",
         model: "test_model",
         plate: "abc1725",
-        manufacture_yer: 2015,
+        manufacture_year: 2015,
         model_year: 2014
       }
     end
