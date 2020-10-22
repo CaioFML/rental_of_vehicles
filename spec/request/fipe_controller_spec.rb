@@ -1,6 +1,6 @@
 RSpec.describe FipeController, type: :request do
   describe "GET #models" do
-    subject(:get_models) { get models_path, params: { brand_id: brand_id} }
+    subject(:get_models) { get models_path, params: { brand_id: brand_id } }
 
     let(:brand_id) { "2" }
 

@@ -5,6 +5,7 @@ AllCops:
     - tmp/**/*
     - vendor/**/*
     - node_modules/**/*
+    - config/initializers/**/*
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes

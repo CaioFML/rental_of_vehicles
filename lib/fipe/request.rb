@@ -2,7 +2,7 @@ module Fipe
   class Request
     class UnexpectedResponse < StandardError; end
 
-    URL = "http://fipeapi.appspot.com/api/1/carros"
+    URL = "http://fipeapi.appspot.com/api/1/carros".freeze
 
     class << self
       def brands
