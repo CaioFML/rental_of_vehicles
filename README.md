@@ -18,10 +18,10 @@ Siga os passos a seguir para rodar esta aplicação:
 
 ## Rotas
 
-- "/" - Irá direcionar para a root em que será possível alugar um carro.
-- "/vehicles" - Rota protegida, que irá listar os veículos cadastrados.
-- "/vehicles/new" - Rota protegida, formulário para adicionar um veículo.
-- "/bookings" - Rota protegida, que irá lista as reservas feitas.
+- `/` - Irá direcionar para a root em que será possível alugar um carro.
+- `/vehicles` - Rota protegida, que irá listar os veículos cadastrados.
+- `/vehicles/new` - Rota protegida, formulário para adicionar um veículo.
+- `/bookings` - Rota protegida, que irá lista as reservas feitas.
 
 ## Rodando os testes
 
