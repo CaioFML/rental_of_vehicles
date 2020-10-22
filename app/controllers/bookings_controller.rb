@@ -12,7 +12,11 @@ class BookingsController < ApplicationController
   def create
     @booking = Booking.new(booking_params)
 
-    redirect_to root_path, notice: "Reserva realizada com sucesso." if @booking.save
+    if @booking.save
+      redirect_to root_path, notice: "Reserva realizada com sucesso."
+    else
+      render :new
+    end
   end
 
   private
