@@ -16,7 +16,7 @@ RSpec.describe VehiclesController, type: :request do
   end
 
   describe "POST #create" do
-    subject(:post_create) { post vehicles_path, params: { vehicle: params } }
+    subject(:create_vehicle) { post vehicles_path, params: { vehicle: params } }
 
     let(:params) do
       {
@@ -29,13 +29,13 @@ RSpec.describe VehiclesController, type: :request do
     end
 
     it do
-      post_create
+      create_vehicle
 
       expect(response).to redirect_to vehicles_path
     end
 
     it "creates vehicle" do
-      expect { post_create }.to change(Vehicle, :count).by 1
+      expect { create_vehicle }.to change(Vehicle, :count).by 1
     end
   end
 

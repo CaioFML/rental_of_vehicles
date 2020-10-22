@@ -1,0 +1,16 @@
+h2 Reservas
+
+table.table.table-rover
+  thead
+    tr
+      td Veículo
+      td CPF
+      td Começa em
+      td Termina em
+  tbody
+    - @bookings.each do |booking|
+      tr
+        td = booking.vehicle
+        td = booking.cpf
+        td = booking.start_at
+        td = booking.end_at
