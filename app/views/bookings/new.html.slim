@@ -1,9 +1,19 @@
 = render "messages"
 
-= simple_form_for @booking do |f|
-  = f.error :base
-  = f.association :vehicle, collection: Vehicle.all
-  = f.input :start_at, as: :date, html5: true
-  = f.input :end_at, as: :date, html5: true
-  = f.input :cpf
-  = f.submit "Reservar", class: "btn btn-primary"
+.col-md-5.offset-md-3
+  br
+  .card.card-outline-secondary
+    .card-body
+      h3.text-center Alugue seu veículo
+      hr
+
+      = simple_form_for @booking do |f|
+        - if f.object.errors[:base].present?
+          = f.error :base, class: "alert alert-danger"
+        = f.association :vehicle, collection: Vehicle.all.map { |vehicle| [vehicle.full_name, vehicle.id]},
+                                  prompt: "Selecione o veículo que deseja alugar"
+        .row
+          = f.input :start_at, as: :date, html5: true, wrapper_html: { class: "col-md-6" }
+          = f.input :end_at, as: :date, html5: true, wrapper_html: { class: "col-md-6" }
+        = f.input :cpf, placeholder: "12345678900"
+        = f.submit "Reservar", class: "btn btn-primary"
