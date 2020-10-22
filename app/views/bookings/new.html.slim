@@ -1,6 +1,7 @@
 = render "messages"
 
 = simple_form_for @booking do |f|
+  = f.error :base
   = f.association :vehicle, collection: Vehicle.all
   = f.input :start_at, as: :date, html5: true
   = f.input :end_at, as: :date, html5: true

@@ -4,6 +4,21 @@ RSpec.describe Booking, type: :model do
     it { is_expected.to validate_presence_of(:vehicle) }
     it { is_expected.to validate_presence_of(:start_at) }
     it { is_expected.to validate_presence_of(:end_at) }
+
+    context "when vehicle is already reserved in period" do
+      before { create(:booking, vehicle: vehicle, start_at: Date.new(2020, 10, 21), end_at: Date.new(2020, 10, 30)) }
+
+      let(:booking) do
+        build(:booking, vehicle: vehicle, start_at: Date.new(2020, 10, 21), end_at: Date.new(2020, 10, 30))
+      end
+      let(:vehicle) { create(:vehicle) }
+
+      it "adds an error" do
+        booking.save
+
+        expect(booking.errors.full_messages).to eq ["Veículo já reservado neste período"]
+      end
+    end
   end
 
   describe "scopes" do
