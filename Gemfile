@@ -14,7 +14,6 @@ gem "simple_form"
 gem "slim-rails"
 gem "sqlite3", "~> 1.4"
 gem "turbolinks", "~> 5"
-gem "validates_cpf_cnpj"
 gem "webpacker", "~> 4.0"
 
 group :development, :test do
