@@ -10,6 +10,7 @@ pt-BR:
         start_at: "Início"
         end_at: "Fim"
       vehicle:
+        brand_id: "Marca"
         brand: "Marca"
         plate: "Placa"
         model: "Modelo"

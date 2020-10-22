@@ -1,5 +1,5 @@
 = simple_form_for @vehicle do |f|
-  = f.input :brand_id, label: "brand", as: :select, collection: @brands
+  = f.input :brand_id, as: :select, collection: @brands
   = f.hidden_field :brand
   = f.input :model, as: :grouped_select
   = f.hidden_field :model, id: "vehicle_model_hidden"
