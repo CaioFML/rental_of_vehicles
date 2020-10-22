@@ -1,4 +1,6 @@
 class BookingsController < ApplicationController
+  layout "layouts/admin", only: :index
+
   before_action :authenticate_user!, only: :index
 
   def index

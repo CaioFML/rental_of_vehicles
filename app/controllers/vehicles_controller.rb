@@ -1,4 +1,6 @@
 class VehiclesController < ApplicationController
+  layout "layouts/admin"
+
   before_action :authenticate_user!
   before_action :set_vehicle, only: %i[edit update destroy]
   before_action :set_brands, only: %i[new edit]

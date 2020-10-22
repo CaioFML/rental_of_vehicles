@@ -1,10 +1,18 @@
-= simple_form_for @vehicle do |f|
-  = f.input :brand_id, as: :select, collection: @brands
-  = f.hidden_field :brand
-  = f.input :model, as: :grouped_select
-  = f.hidden_field :model, id: "vehicle_model_hidden"
-  = f.input :plate
-  = f.input :model_year, as: :integer, html5: true
-  = f.input :manufacture_year, as: :integer, html5: true
-  = f.submit "Salvar", class: "btn btn-success"
-  = f.object.inspect
+= render "shared/messages"
+
+.col-md-5.offset-md-3
+  br
+  .card.card-outline-secondary
+    .card-body
+      h3.text-center Adicione um carro
+      hr
+
+      = simple_form_for @vehicle do |f|
+        = f.input :brand_id, as: :select, collection: @brands
+        = f.hidden_field :brand
+        = f.input :model, as: :grouped_select
+        = f.hidden_field :model, id: "vehicle_model_hidden"
+        = f.input :plate
+        = f.input :model_year, as: :integer, html5: true
+        = f.input :manufacture_year, as: :integer, html5: true
+        = f.submit "Salvar", class: "btn btn-success"

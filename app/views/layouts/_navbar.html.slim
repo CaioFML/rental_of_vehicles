@@ -1,0 +1,10 @@
+nav.navbar.navbar-expand-lg.navbar-dark.bg-dark.mb-3
+  a class="navbar-brand" href="/" Rental of Vehicles
+
+  .collapse.navbar-collapse id="navbarSupportedContent"
+    ul.navbar-nav.mr-auto
+      li.nav-item
+        = link_to "Veículos", vehicles_path, class: "nav-link"
+
+      li.nav-item
+        = link_to "Reservas", bookings_path, class: "nav-link"

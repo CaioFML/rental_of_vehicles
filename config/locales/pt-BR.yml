@@ -1,4 +1,8 @@
 pt-BR:
+  date:
+    formats:
+      default: ! '%d/%m/%Y'
+
   activerecord:
     models:
       booking: "Reserva"

@@ -10,7 +10,7 @@ table.table.table-rover
   tbody
     - @bookings.each do |booking|
       tr
-        td = booking.vehicle
+        td = booking.vehicle.full_name
         td = booking.cpf
-        td = booking.start_at
-        td = booking.end_at
+        td = I18n.l(booking.start_at)
+        td = I18n.l(booking.end_at)
