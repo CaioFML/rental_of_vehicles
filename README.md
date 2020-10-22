@@ -8,13 +8,15 @@ Siga os passos a seguir para rodar esta aplicação:
 
   `docker-compose build`
 
-- Suba o servidor, isso também irá criar e rodar as migrations do banco de dados e gerar os seeds:
+- Suba o servidor, isso também irá criar e rodar as migrations do banco de dados e gerar os seeds*:
 
   `docker-compose up`
 
 - Acesse pelo browser:
 
   `localhost:3000`
+
+*Para acessar a area protegida basta utilizar: `login: admin@example.com` e `password: 123456`
 
 ## Rotas
 
