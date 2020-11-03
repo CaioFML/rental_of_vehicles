@@ -20,5 +20,3 @@ COPY Gemfile ./
 ENV BUNDLE_PATH /gems
 
 COPY . .
-
-RUN yarn install --check-files
