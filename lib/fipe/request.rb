@@ -2,11 +2,13 @@ module Fipe
   class Request
     class UnexpectedResponse < StandardError; end
 
-    URL = "http://fipeapi.appspot.com/api/1/carros".freeze
+    URL = "https://parallelum.com.br/fipe/api/v1/carros".freeze
 
     class << self
       def brands
-        response = HTTParty.get("#{URL}/marcas.json")
+        response = HTTParty.get("#{URL}/marcas")
+
+        Rails.logger.info response
 
         raise UnexpectedResponse unless response.success?
 
@@ -14,7 +16,7 @@ module Fipe
       end
 
       def models(brand_id)
-        response = HTTParty.get("#{URL}/veiculos/#{brand_id}.json")
+        response = HTTParty.get("#{URL}/marcas/#{brand_id}/modelos")
 
         raise UnexpectedResponse unless response.success?
 

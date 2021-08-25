@@ -1,0 +1,51 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://parallelum.com.br/fipe/api/v1/carros/marcas/1/modelos
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: '<%= http_code %>'
+      message: OK
+    headers:
+      Date:
+      - Wed, 25 Aug 2021 20:35:42 GMT
+      Server:
+      - nginx/1.19.10
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '171'
+      Access-Control-Allow-Origin:
+      - "*"
+      Access-Control-Allow-Methods:
+      - GET,PUT,POST,DELETE,OPTIONS
+      Access-Control-Allow-Headers:
+      - X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5,
+        Content-Type, Date, X-Api-Version
+      Vary:
+      - Accept-Encoding
+      X-Server-Cache:
+      - 'true'
+      X-Proxy-Cache:
+      - MISS
+    body:
+      encoding: ASCII-8BIT
+      string: '{"modelos":[{"nome":"Integra GS 1.8","codigo":1},{"nome":"Legend 3.2\/3.5","codigo":2},{"nome":"NSX
+        3.0","codigo":3}],"anos":[{"nome":"1998 Gasolina","codigo":"1998-1"},{"nome":"1997
+        Gasolina","codigo":"1997-1"},{"nome":"1996 Gasolina","codigo":"1996-1"},{"nome":"1995
+        Gasolina","codigo":"1995-1"},{"nome":"1994 Gasolina","codigo":"1994-1"},{"nome":"1993
+        Gasolina","codigo":"1993-1"},{"nome":"1992 Gasolina","codigo":"1992-1"},{"nome":"1991
+        Gasolina","codigo":"1991-1"}]}'
+  recorded_at: Wed, 25 Aug 2021 20:35:42 GMT
+recorded_with: VCR 6.0.0
