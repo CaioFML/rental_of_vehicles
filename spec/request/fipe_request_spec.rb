@@ -5,12 +5,16 @@ RSpec.describe FipeController, type: :request do
     let(:brand_id) { "2" }
 
     it do
+      expect(Fipe::Request).to receive(:models).with(brand_id)
+
       get_models
+
       expect(response).to have_http_status :ok
     end
 
     it "returns model of vehicles" do
       expect(Fipe::Request).to receive(:models).with(brand_id)
+
       get_models
     end
   end
