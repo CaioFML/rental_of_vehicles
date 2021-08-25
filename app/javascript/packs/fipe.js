@@ -9,8 +9,8 @@ document.addEventListener("turbolinks:load", function () {
                 $("#vehicle_brand").val($("#vehicle_brand_id option:selected").text())
                 $("#vehicle_model").find('option').remove().end();
                 $("#vehicle_model").append(`<option value=></option>`);
-                data.forEach(function(model) {
-                    $("#vehicle_model").append(`<option value="${model["name"]}">${model["name"]}</option>`);
+                data["modelos"].forEach(function(model) {
+                    $("#vehicle_model").append(`<option value="${model["nome"]}">${model["nome"]}</option>`);
                 })
             },
         })
