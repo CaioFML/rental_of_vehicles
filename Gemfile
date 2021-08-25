@@ -25,6 +25,7 @@ group :development, :test do
   gem "rubocop-rspec", require: false
   gem "vcr"
   gem "webmock"
+  gem "rails-controller-testing"
 end
 
 group :development do
