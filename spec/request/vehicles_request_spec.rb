@@ -26,7 +26,7 @@ RSpec.describe VehiclesController, type: :request do
     end
 
     it { expect(response).to have_http_status :ok }
-    it { expect(assigns(:brands)).to match_array([["Acura", "1"], ["Hyundai", "2"]]) }
+    it { expect(assigns(:brands)).to match_array([%w[Acura 1], %w[Hyundai 2]]) }
   end
 
   describe "POST #create" do
@@ -70,7 +70,7 @@ RSpec.describe VehiclesController, type: :request do
     end
 
     it { expect(response).to have_http_status :ok }
-    it { expect(assigns(:brands)).to match_array([["Acura", "1"], ["Hyundai", "2"]]) }
+    it { expect(assigns(:brands)).to match_array([%w[Acura 1], %w[Hyundai 2]]) }
   end
 
   describe "PUT #update" do

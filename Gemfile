@@ -20,10 +20,10 @@ group :development, :test do
   gem "byebug", platforms: %i[mri mingw x64_mingw]
   gem "factory_bot_rails"
   gem "pry-rails"
+  gem "rails-controller-testing"
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
-  gem "rails-controller-testing"
 end
 
 group :development do

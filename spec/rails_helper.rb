@@ -26,7 +26,7 @@ require "rspec/rails"
 # If you are not using ActiveRecord, you can remove these lines.
 require "webmock/rspec"
 
-Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
+Dir[Rails.root.join("spec/support/**/*.rb")].sort.each { |f| require f }
 
 begin
   ActiveRecord::Migration.maintain_test_schema!
@@ -75,10 +75,10 @@ RSpec.configure do |config|
       "goog:chromeOptions" => { 'args': %w[no-sandbox headless disable-gpu window-size=1400,1400] }
     )
 
-    if ENV['HUB_URL']
+    if ENV["HUB_URL"]
       Capybara::Selenium::Driver.new(app,
                                      browser: :remote,
-                                     url: ENV['HUB_URL'],
+                                     url: ENV["HUB_URL"],
                                      desired_capabilities: chrome_capabilities)
     else
       Capybara::Selenium::Driver.new(app,
@@ -87,14 +87,12 @@ RSpec.configure do |config|
     end
   end
 
-  RSpec.configure do |config|
-    config.before(:each, type: :system) do
-      driven_by :chrome_headless
+  config.before(:each, type: :system) do
+    driven_by :chrome_headless
 
-      Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}:3000"
-      Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
-      Capybara.server_port = 3000
-    end
+    Capybara.app_host = "http://#{IPSocket.getaddress(Socket.gethostname)}:3000"
+    Capybara.server_host = IPSocket.getaddress(Socket.gethostname)
+    Capybara.server_port = 3000
   end
 
   config.include FactoryBot::Syntax::Methods
