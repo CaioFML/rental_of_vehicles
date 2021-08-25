@@ -2,41 +2,41 @@
 
 ## Setup
 
-Siga os passos a seguir para rodar esta aplicação:
+Follow the steps below to run this application:
 
-- Rode o build da imagem do docker:
+- Run docker image build:
 
   `docker-compose build`
 
-- Suba o servidor, isso também irá criar e rodar as migrations do banco de dados e gerar os seeds*:
+- Put the server on, this will also create database, run migrations and generate seeds:
 
   `docker-compose up`
 
-- Acesse pelo browser:
+- Access by the browser with:
 
   `localhost:3000`
 
-*Para acessar a area protegida basta utilizar: `login: admin@example.com` e `password: 123456`
+*To access protected area, just log with: `login: admin@example.com` and `password: 123456`
 
-## Rotas
+## Routes
 
-- `/` - Irá direcionar para a root em que será possível alugar um carro.
-- `/vehicles` - Rota protegida, que irá listar os veículos cadastrados.
-- `/vehicles/new` - Rota protegida, formulário para adicionar um veículo.
-- `/bookings` - Rota protegida, que irá lista as reservas feitas.
+- `/` - Will redirect to the root, where you can rent a car.
+- `/vehicles` - Protected area, here you can see all cars to be rent.
+- `/vehicles/new` - Protected area, form to add new car to rent.
+- `/bookings` - Protected area, here will index all rents made by users.
 
-## Rodando os testes
+## Running tests
 
 - Rode o comando abaixo para executar os testes, que será gerado no formato de documentação e de forma aleatória:
 
   `docker-compose run --rm app bundle exec rspec`
 
-## Rodando o rubocop:
+## Running rubocop:
 
-- Esta aplicação foi feita utilizando o [rubocop](https://github.com/rubocop-hq/rubocop), uma gem que força a utilização dos estilos propostos em [RubyStyle Guide](https://rubystyle.guide/)
+- That application was made using [rubocop](https://github.com/rubocop-hq/rubocop), this is a linter with styles proposed by [RubyStyle Guide](https://rubystyle.guide/)
 
   `docker-compose run --rm app bundle exec rubocop`
 
-## Referências
+## References
 
-- Foi utilizado o [betterspec](https://www.betterspecs.org/) como referência de boas práticas na criação dos testes.
+- [betterspec](https://www.betterspecs.org/) was used as a best practice reference in creating the tests.
