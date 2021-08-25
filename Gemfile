@@ -23,8 +23,6 @@ group :development, :test do
   gem "rubocop", require: false
   gem "rubocop-rails", require: false
   gem "rubocop-rspec", require: false
-  gem "vcr"
-  gem "webmock"
   gem "rails-controller-testing"
 end
 
@@ -40,6 +38,9 @@ group :test do
   gem "rspec-rails"
   gem "selenium-webdriver"
   gem "shoulda-matchers"
+  gem "webmock"
+  # gem "webdrivers"
+  gem "vcr"
 end
 
 gem "tzinfo-data", platforms: %i[mingw mswin x64_mingw jruby]
