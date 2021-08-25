@@ -10,9 +10,23 @@ RSpec.describe VehiclesController, type: :request do
   end
 
   describe "GET #new" do
-    subject! { get new_vehicle_path }
+    subject(:get_new) { get new_vehicle_path }
+
+    before do
+      allow(Fipe::Request).to receive(:brands).and_return response_fipe
+
+      get_new
+    end
+
+    let(:response_fipe) do
+      [
+        { "codigo" => "1", "nome" => "Acura" },
+        { "codigo" => "2", "nome" => "Hyundai" }
+      ]
+    end
 
     it { expect(response).to have_http_status :ok }
+    it { expect(assigns(:brands)).to match_array([["Acura", "1"], ["Hyundai", "2"]]) }
   end
 
   describe "POST #create" do
@@ -40,9 +54,23 @@ RSpec.describe VehiclesController, type: :request do
   end
 
   describe "GET #edit" do
-    subject! { get edit_vehicle_path(vehicle) }
+    subject(:get_edit) { get edit_vehicle_path(vehicle) }
+
+    before do
+      allow(Fipe::Request).to receive(:brands).and_return response_fipe
+
+      get_edit
+    end
+
+    let(:response_fipe) do
+      [
+        { "codigo" => "1", "nome" => "Acura" },
+        { "codigo" => "2", "nome" => "Hyundai" }
+      ]
+    end
 
     it { expect(response).to have_http_status :ok }
+    it { expect(assigns(:brands)).to match_array([["Acura", "1"], ["Hyundai", "2"]]) }
   end
 
   describe "PUT #update" do

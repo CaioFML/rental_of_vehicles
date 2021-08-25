@@ -44,7 +44,7 @@ class VehiclesController < ApplicationController
   end
 
   def set_brands
-    @brands = Fipe::Request.brands.map { |brand| [brand["name"], brand["id"]] }
+    @brands = Fipe::Request.brands.map { |brand| [brand["nome"], brand["codigo"]] }
   end
 
   def vehicle_params
